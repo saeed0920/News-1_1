@@ -1,0 +1,80 @@
+.news {
+  // last news
+  &__last {
+    grid-row: header-start / header-end;
+    grid-column: col-start 1 / col-end 1;
+
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    grid-template-rows: 8rem;
+    grid-row-gap: 1.2rem;
+    margin-top: $margin-top;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    border-top: 3px solid $color-green;
+
+    &__h1 {
+      grid-column: 1 / 2;
+      font-size: 2.5rem;
+      color: $color-blue-dark;
+      font-family: $font--header;
+    }
+    &__btn {
+      grid-column: 3 / 4;
+    }
+
+    &__container {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $color-gray-light;
+      border-radius: 4px;
+      box-shadow: 0 0.2rem 1rem rgba($color-black, 0.15);
+      padding: 1rem;
+      transition: all 0.2s;
+      backface-visibility: hidden;
+      &:hover {
+        transform: scale(1.1);
+
+        box-shadow: 0 0.7rem 1rem rgba($color-black, 0.1);
+      }
+
+      & img {
+        width: 6rem;
+        height: 6rem;
+        border: 1px solid $color-white;
+        border-radius: 4px;
+        object-fit: cover;
+        background-size: cover;
+      }
+      & .box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 1rem;
+        & h2 {
+          font-family: $font--text;
+          font-size: 1.5rem;
+          line-height: 1;
+        }
+        & .text-box {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.2rem;
+          font-family: $font--main;
+
+          & a {
+            @include link;
+            font-family: $font--main;
+
+            font-size: 1.5rem;
+            color: $color-green;
+          }
+        }
+      }
+    }
+  }
+}
