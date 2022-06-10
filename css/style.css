@@ -50,7 +50,7 @@ big-desktop
   font-size: 2rem;
   font-family: font-main;
   height: 5rem;
-  width: 15rem; }
+  width: max-content; }
   .btn:hover {
     box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.15);
     transform: translatey(-3px);
@@ -70,6 +70,20 @@ big-desktop
   border-radius: 4px;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   margin-top: 4rem; }
+
+.footer {
+  grid-column: full-start / full-end;
+  grid-row: col-start 4 / col-end 4;
+  height: 5rem;
+  margin-top: 4rem;
+  text-align: center;
+  background-color: #2b6777;
+  align-self: center;
+  padding: 1rem 0; }
+  .footer__copyright {
+    font-size: 2rem;
+    font-family: font-header;
+    color: #fff; }
 
 *,
 *::after,
@@ -389,6 +403,9 @@ body {
     justify-content: space-evenly;
     align-items: center;
     padding: 1rem 0; }
+    .news__notif__container:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.1); }
     .news__notif__container h2 {
       font-family: font-text;
       font-size: 1.5rem; }
@@ -403,3 +420,40 @@ body {
       font-family: font-header;
       color: #52ab98;
       font-size: 1.5rem; }
+
+.gallery {
+  grid-row: col-start 3 / col-end 3;
+  grid-column: col-start 1 / col-end 4;
+  height: 70rem;
+  border-radius: 4px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  margin-top: 4rem;
+  background: linear-gradient(to top right, rgba(43, 103, 119, 0.8), rgba(82, 171, 152, 0.6)); }
+  .gallery-container {
+    position: relative; }
+    .gallery-container > *:hover ~ *:not(:hover) {
+      transform: scale(0.9); }
+    .gallery-container > * {
+      transition: all 0.2s;
+      outline-offset: 0.6rem;
+      position: absolute;
+      width: 30%;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15); }
+      .gallery-container > *:hover {
+        transform: scale(1.1) translateY(-3px);
+        outline: 1rem rgba(82, 171, 152, 0.7) solid;
+        outline-style: inset;
+        box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.3);
+        z-index: 5; }
+    .gallery-container-1 {
+      left: 27%;
+      top: 24rem;
+      z-index: 2; }
+    .gallery-container-2 {
+      z-index: 3;
+      right: 23%;
+      top: 14rem; }
+    .gallery-container-3 {
+      z-index: 4;
+      top: 2rem;
+      left: 43rem; }

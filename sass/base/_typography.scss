@@ -41,7 +41,7 @@
   font-family: $font--main;
 
   height: 5rem;
-  width: 15rem;
+  width: max-content;
   &:hover {
     box-shadow: 0 0.8rem 1rem $box-shadow-015;
     transform: translatey(-3px);
@@ -65,4 +65,21 @@
   border-radius: 4px;
   box-shadow: $box-shadow-def;
   margin-top: $margin-top;
+}
+
+// footer
+.footer {
+  grid-column: full-start / full-end;
+  grid-row: col-start 4 / col-end 4;
+  height: 5rem;
+  margin-top: $margin-top;
+  text-align: center;
+  background-color: $color-blue-dark;
+  align-self: center;
+  padding: 1rem 0;
+  &__copyright {
+    font-size: 2rem;
+    font-family: $font--header;
+    color: $color-white;
+  }
 }
