@@ -3,7 +3,19 @@
   &__last {
     grid-row: header-start / header-end;
     grid-column: col-start 1 / col-end 1;
+  }
 
+  &__shire {
+    grid-row: header-start / header-end;
+    grid-column: col-start 4 / col-end 4;
+  }
+
+  &__best {
+    grid-row: col-start 1 / col-end 1;
+    grid-column: col-start 1 / col-end 3;
+  }
+  // items eash news-box
+  &__box {
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
     grid-template-rows: 8rem;
@@ -13,7 +25,6 @@
     justify-items: center;
     align-items: center;
     border-top: 3px solid $color-green;
-
     &__h1 {
       grid-column: 1 / 2;
       font-size: 2.5rem;
@@ -37,7 +48,6 @@
       backface-visibility: hidden;
       &:hover {
         transform: scale(1.1);
-
         box-shadow: 0 0.7rem 1rem rgba($color-black, 0.1);
       }
 
@@ -69,10 +79,81 @@
           & a {
             @include link;
             font-family: $font--main;
-
             font-size: 1.5rem;
             color: $color-green;
           }
+        }
+      }
+    }
+  }
+
+  // style items of setcion best news
+  &__best {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-rows: 6rem;
+    grid-auto-rows: 35rem;
+
+    grid-gap: 2rem;
+    padding: 2rem;
+    margin-top: $margin-top;
+    background-color: $color-gray-light;
+    box-shadow: 0 0.2rem 1rem rgba($color-black, 0.15);
+    &__h1 {
+      font-size: 2.5rem;
+      color: $color-blue-dark;
+      font-family: $font--header;
+      justify-self: flex-start;
+    }
+    &__btn {
+      justify-self: flex-end;
+    }
+    &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      background-color: $color-white;
+      border-radius: 5px;
+      box-shadow: $box-shadow-def;
+      transition: all 0.2s;
+      &:hover {
+        transform: scale(1.02);
+        box-shadow: 0 2rem 2rem rgba($color-black, 0.25);
+      }
+
+      & img {
+        background-position: center;
+        background-size: cover;
+        width: 100%;
+        height: 60%;
+        background-repeat: no-repeat;
+        object-fit: cover;
+      }
+      & h2 {
+        padding: 1rem 2rem;
+        font-family: $font--text;
+        font-size: 2rem;
+      }
+      & .text-box {
+        margin-top: -1rem;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-self: stretch;
+        align-items: center;
+        & .date {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.2rem;
+          font-family: $font--main;
+        }
+        & a {
+          @include link;
+          font-family: $font--main;
+          font-size: 1.5rem;
+          color: $color-green;
         }
       }
     }
