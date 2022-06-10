@@ -209,8 +209,9 @@ body {
   .navbar__link, .navbar__link:visited, .navbar__link:link {
     text-decoration: none;
     font-family: font-header;
-    color: #f2f2f2;
+    color: #52ab98;
     font-size: 2rem;
+    color: #fff;
     padding: 1rem 3rem;
     transition: all 0.2s; }
     .navbar__link:hover, .navbar__link:visited:hover, .navbar__link:link:hover {
@@ -233,18 +234,24 @@ body {
   grid-row: col-start 1 / col-end 1;
   grid-column: col-start 1 / col-end 3; }
 
+.news__notif {
+  grid-row: col-start 1 / col-end 1;
+  grid-column: col-start 4 / col-end 4; }
+
 .news__box {
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
   grid-template-rows: 8rem;
   grid-row-gap: 1.2rem;
-  margin-top: 4rem;
   justify-content: center;
   justify-items: center;
   align-items: center;
-  border-top: 3px solid #52ab98; }
+  border-top: 3px solid #52ab98;
+  margin-top: 4rem;
+  padding: 0 1rem; }
   .news__box__h1 {
     grid-column: 1 / 2;
+    justify-self: flex-start;
     font-size: 2.5rem;
     color: #2b6777;
     font-family: font-header; }
@@ -255,10 +262,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 1rem;
     background-color: #f2f2f2;
     border-radius: 4px;
     box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
-    padding: 1rem;
     transition: all 0.2s;
     backface-visibility: hidden; }
     .news__box__container:hover {
@@ -289,21 +296,23 @@ body {
         .news__box__container .box .text-box a {
           text-decoration: none;
           font-family: font-header;
-          color: #f2f2f2;
-          font-family: font-main;
-          font-size: 1.5rem;
-          color: #52ab98; }
+          color: #52ab98;
+          font-size: 1.5rem; }
 
 .news__best {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   grid-template-rows: 6rem;
   grid-auto-rows: 35rem;
-  grid-gap: 2rem;
-  padding: 2rem;
-  margin-top: 4rem;
   background-color: #f2f2f2;
-  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15); }
+  border-radius: 4px;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+  backface-visibility: hidden;
+  border-top: 3px solid #52ab98;
+  margin-top: 4rem;
+  grid-gap: 2rem;
+  padding: 2rem 1rem; }
   .news__best__h1 {
     font-size: 2.5rem;
     color: #2b6777;
@@ -315,10 +324,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
-    transition: all 0.2s; }
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    backface-visibility: hidden; }
     .news__best__container:hover {
       transform: scale(1.02);
       box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.25); }
@@ -349,7 +359,47 @@ body {
       .news__best__container .text-box a {
         text-decoration: none;
         font-family: font-header;
-        color: #f2f2f2;
-        font-family: font-main;
-        font-size: 1.5rem;
-        color: #52ab98; }
+        color: #52ab98;
+        font-size: 1.5rem; }
+
+.news__notif {
+  border-top: 3px solid #52ab98;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 5rem;
+  grid-row-gap: 2rem;
+  padding: 2rem 1rem; }
+  .news__notif h1 {
+    font-size: 2.5rem;
+    color: #2b6777;
+    font-family: font-header;
+    grid-column: 1 / 2; }
+  .news__notif__btn {
+    grid-column: 2 / 3;
+    justify-self: flex-end; }
+  .news__notif__container {
+    grid-column: 1 / -1;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+    transition: all 0.2s;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem 0; }
+    .news__notif__container h2 {
+      font-family: font-text;
+      font-size: 1.5rem; }
+    .news__notif__container .date {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      font-family: font-main; }
+    .news__notif__container a {
+      text-decoration: none;
+      font-family: font-header;
+      color: #52ab98;
+      font-size: 1.5rem; }

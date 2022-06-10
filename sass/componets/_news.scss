@@ -14,22 +14,26 @@
     grid-row: col-start 1 / col-end 1;
     grid-column: col-start 1 / col-end 3;
   }
+
+  &__notif {
+    grid-row: col-start 1 / col-end 1;
+    grid-column: col-start 4 / col-end 4;
+  }
   // items eash news-box
   &__box {
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
     grid-template-rows: 8rem;
     grid-row-gap: 1.2rem;
-    margin-top: $margin-top;
     justify-content: center;
     justify-items: center;
     align-items: center;
-    border-top: 3px solid $color-green;
+    @include news;
+    padding: 0 1rem;
     &__h1 {
       grid-column: 1 / 2;
-      font-size: 2.5rem;
-      color: $color-blue-dark;
-      font-family: $font--header;
+      justify-self: flex-start;
+      @include header;
     }
     &__btn {
       grid-column: 3 / 4;
@@ -40,12 +44,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background-color: $color-gray-light;
-      border-radius: 4px;
-      box-shadow: 0 0.2rem 1rem rgba($color-black, 0.15);
       padding: 1rem;
-      transition: all 0.2s;
-      backface-visibility: hidden;
+      @include container;
       &:hover {
         transform: scale(1.1);
         box-shadow: 0 0.7rem 1rem rgba($color-black, 0.1);
@@ -78,9 +78,7 @@
 
           & a {
             @include link;
-            font-family: $font--main;
             font-size: 1.5rem;
-            color: $color-green;
           }
         }
       }
@@ -93,16 +91,12 @@
     grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
     grid-template-rows: 6rem;
     grid-auto-rows: 35rem;
-
+    @include container;
+    @include news;
     grid-gap: 2rem;
-    padding: 2rem;
-    margin-top: $margin-top;
-    background-color: $color-gray-light;
-    box-shadow: 0 0.2rem 1rem rgba($color-black, 0.15);
+    padding: 2rem 1rem;
     &__h1 {
-      font-size: 2.5rem;
-      color: $color-blue-dark;
-      font-family: $font--header;
+      @include header;
       justify-self: flex-start;
     }
     &__btn {
@@ -113,10 +107,7 @@
       flex-direction: column;
       align-items: center;
 
-      background-color: $color-white;
-      border-radius: 5px;
-      box-shadow: $box-shadow-def;
-      transition: all 0.2s;
+      @include container;
       &:hover {
         transform: scale(1.02);
         box-shadow: 0 2rem 2rem rgba($color-black, 0.25);
@@ -151,10 +142,49 @@
         }
         & a {
           @include link;
-          font-family: $font--main;
           font-size: 1.5rem;
-          color: $color-green;
         }
+      }
+    }
+  }
+
+  // style items for notif news
+  &__notif {
+    @include news;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 5rem;
+    grid-row-gap: 2rem;
+    padding: 2rem 1rem;
+    & h1 {
+      @include header;
+      grid-column: 1 / 2;
+    }
+    &__btn {
+      grid-column: 2 / 3;
+      justify-self: flex-end;
+    }
+    &__container {
+      grid-column: 1 / -1;
+      @include container;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 1rem 0;
+      & h2 {
+        font-family: $font--text;
+        font-size: 1.5rem;
+      }
+      & .date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1rem;
+        font-family: $font--main;
+      }
+      & a {
+        @include link;
+        font-size: 1.5rem;
       }
     }
   }
